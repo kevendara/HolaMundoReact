@@ -3,13 +3,19 @@ import cabecera from './Components/Cabecera'
 import './App.css'
 import Cabecera from './Components/Cabecera'
 
-function App() {
-  return (
-    <div className="App">
-      <Cabecera></Cabecera>
-      HOLA MUNDO
-    </div>
-  );
+class App extends Component {
+  manejaClick = texto => {
+    console.log(texto)
+  }
+  render(){
+    const miau ='Bienvenido miau'
+    return (
+      <div className="App">
+        <Cabecera miau={miau} manejaClick={this.manejaClick}/>
+        HOLA MUNDO
+      </div>
+    );
+  }
 }
 
 export default App;

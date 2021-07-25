@@ -2,11 +2,16 @@ import react, {Component} from 'react'
 import logo from '../logo.svg'
 
 export default class Cabecera extends Component{
+    manejaClick=()=>{
+        const{manejaClick,miau}=this.props
+        manejaClick(miau)
+    }
     render(){
+        const {miau, manejaClick} = this.props
         return(
             <header className="App-header">
                 <p>
-                    <img src={logo} className="App-logo" alt="logo"/>
+                    <img onClick={this.manejaClick} src={logo} className="App-logo" alt="logo"/>
                     <br/>
                     Edit <code>src/App.js</code> and save to reload.
                     </p>
@@ -16,7 +21,7 @@ export default class Cabecera extends Component{
                     target="_blank"
                     rel="noopener noreferrer"
                     >
-                        Learn React
+                        {miau}
                     </a>
             </header>
         )
